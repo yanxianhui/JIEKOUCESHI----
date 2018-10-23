@@ -19,7 +19,7 @@ class TestMethod(unittest.TestCase):
 			'cid':'0',
 			'errorCode':1001
 		}
-		#self.run.run_main = mock.Mock(return_value=data)
+		self.run.run_main = mock.Mock(return_value=data)
 		res = mock_test(self.run.run_main,data,url,"POST",data)
 		#res = self.run.run_main(url,'POST',data)
 
@@ -29,7 +29,7 @@ class TestMethod(unittest.TestCase):
 
 	#@unittest.skip('test_02')	
 	def test_02(self):
-		
+
 		url = 'http://coding.imooc.com/api/cate'
 		data = {
 			'timestamp':'1507034803124',
@@ -39,11 +39,11 @@ class TestMethod(unittest.TestCase):
 			'token':'7d6f14f21ec96d755de41e6c076758dd',
 			'cid':'0'
 		}
-
+		self.run.run_main = mock.Mock(return_value=data)
 		res = self.run.run_main(url,'POST',data)
 		self.assertEqual(res['errorCode'],1001,"测试失败")
 		print ("这是第二个case")
-		#mock
+	# 	#mock
 
 if __name__ == '__main__':
 	unittest.main()

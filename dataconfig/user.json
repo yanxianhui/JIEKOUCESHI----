@@ -26,8 +26,8 @@
     "AreaCode":""
   },
   "Re_pipei":{
-  "ModelBillNo":"SH201809051027",
-    "MatchCaseNo":"201810160001"
+  "ModelBillNo":"SH201810220010",
+    "MatchCaseNo":"201810220009"
   },
   "Quality-data":{
    "pageIndex":"1",
@@ -82,16 +82,16 @@
     "UserName":"chang"
   },
   "assignscanowner":{
-    "DesignBillNo":"0002",
+    "DesignBillNo":"201611300022SJ06",
     "ScanOwner":"chang",
-    "ScanOwnerUID":"2"
+    "ScanOwnerUID":"3"
   },
   "commitscanresult":{
-    "DesignBillNo":"002",
+    "DesignBillNo":"201611300022SJ06",
     "ScanUploadImgUrl":"D:\\add1.png"
   },
   "completescan":{
-    "DesignBillNo":"002"
+    "DesignBillNo":"201611300022SJ06"
   },
   "getdmpagelist":{
        "PageIndex":"1",
@@ -158,12 +158,12 @@
 
   },
   "AddUserRole":{
-    "CompanyId":"24",
+    "CompanyId":"21",
     "Note":"njihao",
     "ModifyDate":"2018-10-18",
-    "RoleName":"的你的",
-    "DepartmentId":"38",
-    "RoleRule":"24"
+    "RoleName":"368",
+    "DepartmentId":"25",
+    "RoleRule":""
 
   },
   "UpdateUserRole":{
@@ -206,7 +206,7 @@
   },
   "AddUserBasic":{
      "UserName":"里斯d369d6",
-    "UserAccount":"15890154521",
+    "UserAccount":"15325678412",
     "UserPassWord":"123456",
     "RoleName":"西安美-销售",
     "DepartmentId":"38",
@@ -216,12 +216,12 @@
     "UserId":"102"
   },
   "StopUserBasicfalse":{
-   "UserId":"153",
+   "UserId":"183",
     "isDisAble":"false"
   },
   "StopUserBasicture":{
-  "UserId":"153",
-    "isDisAble":"ture"
+  "UserId":"183",
+    "isDisAble":"true"
   },
   "GetProvinceList":{
 
@@ -290,5 +290,16 @@
   },
   "PackQuality":{
     "ProduceBillNo":"201704130003SC02"
+  },
+  "ProductFollowUp":{
+     "PageIndex":"1",
+     "PageSize":"10"
+  },
+  "UpdateProductData":{
+    "ProduceBillNo":"201701180001SC02",
+    "ReceiverName":"123",
+    "ReceiverMobile":"石膏",
+    "ReceiverAddress":"上海首尔",
+    "OrderStatus":"2"
   }
 }

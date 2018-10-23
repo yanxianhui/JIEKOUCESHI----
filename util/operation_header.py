@@ -15,18 +15,25 @@ class OperationHeader:
 		'''
 		获取cookie的jar文件
 		'''
-		url = self.get_response_url()+"&callback=jQuery21008240514814031887_1508666806688&_=1508666806689"
-		cookie = requests.get(url).cookies
+		#url = self.get_response_url()+"&callback=jQuery21008240514814031887_1508666806688&_=1508666806689"
+		#cookie = requests.get(url).cookies
+		cookie = self.response['Data']['AccessToken']
 		return cookie
 
 	def write_cookie(self):
-		cookie = requests.utils.dict_from_cookiejar(self.get_cookie())
+		#cookie = requests.utils.dict_from_cookiejar(self.get_cookie())
+		cookie=self.get_cookie()
+		cookies={
+   "apsid":{
+    "Authorization": "Bearer %s"%(cookie)
+  }
+}
 		op_json = OperetionJson()
-		op_json.write_data(cookie)
-		
+		op_json.write_data(cookies)
+
 if __name__ == '__main__':
 	
-	url = "http://192.168.31.151:5200/api/auth/login/signin"
+	url = "http://www.clearbos.cn:81/api/auth/login/signin"
 	data = {
 		"userAccount":"15890158362",
     "userPassword":"123456",
@@ -35,5 +42,6 @@ if __name__ == '__main__':
 	}
 	res = json.dumps(requests.post(url,data).json())
 	op_header = OperationHeader(res)
+	#print(op_header.get_cookie())
 
-	#op_header.write_cookie()
+	op_header.write_cookie()

@@ -68,7 +68,7 @@ class RunTest():
 				else:
 					self.data.write_result(i,res)
 					fail_count.append(i)
-		#self.send_mai.send_main(pass_count,fail_count)
+		self.send_mai.send_main(pass_count,fail_count)
 
 
 	#将执行判断封装
