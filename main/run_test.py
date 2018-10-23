@@ -6,6 +6,7 @@ from data.get_data import GetData
 from util.common_util import CommonUtil
 from data.dependent_data import DependdentData
 from util.send_email import SendEmail
+from util.sendemail import Email
 from util.operation_header import OperationHeader
 from util.operation_json import OperetionJson
 from log.user_log import UserLog
@@ -14,7 +15,8 @@ class RunTest():
 		self.run_method = RunMethod()
 		self.data = GetData()
 		self.com_util = CommonUtil()
-		self.send_mai = SendEmail()
+		self.send_mai = SendEmail()  #不带文件发送
+		self.send_email=Email()  #带文件发送
 		get_user_log=UserLog()
 		self.logger = get_user_log.get_log()
 	#程序执行的
@@ -41,9 +43,6 @@ class RunTest():
 					#获取依赖的key
 					depend_key = self.data.get_depend_field(i)
 					request_data[depend_key] = depend_response_data
-					# print(depend_response_data)
-					# print(depend_key)
-					# print(request_data[depend_key] )
 				if header == 'write':
 					res = self.run_method.run_main(method,url,request_data)
 					op_header = OperationHeader(res)
@@ -68,7 +67,8 @@ class RunTest():
 				else:
 					self.data.write_result(i,res)
 					fail_count.append(i)
-		self.send_mai.send_main(pass_count,fail_count)
+		#self.send_mai.send_main(pass_count,fail_count)  #不带文件发送
+		self.send_email.sendemail(pass_count,fail_count)   #带文件发送
 
 
 	#将执行判断封装

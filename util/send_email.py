@@ -18,7 +18,7 @@ class SendEmail:
 		server.connect(email_host)
 		server.login(send_user,password)
 		server.sendmail(user,user_list,message.as_string())
-		server.close()
+
 
 	def send_main(self,pass_list,fail_list):
 		pass_num = float(len(pass_list))
